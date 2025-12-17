@@ -1,0 +1,27 @@
+# latex build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# latex temporary / backup files
+*.bak
+*.tmp
+*~
+
+# latexmk / pdflatex outputs
+*.xdv
+
+# os junk
+.DS_Store
+Thumbs.db
