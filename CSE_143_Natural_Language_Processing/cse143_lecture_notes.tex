@@ -7,6 +7,8 @@
 \usepackage{custom}
 \usepackage{lipsum}
 \usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{tcolorbox}
 
 % page formatting
 \usepackage{fancyhdr}
@@ -49,6 +51,9 @@
 
 \begin{itemize}
     \item CSE 143: Natural Language Processing — UCSC
+    \item Textbook for the course: Speech\& Language Processing (3rd Edition preprint) -- Jurafsky \& Martin
+    \item Textbook for the course: Natural Language Processing -- Jacob Eisenstein's online book
+
 \end{itemize}
 
 Please report any errors to \href{mailto:mannmalviya15@gmail.com}{mannmalviya15@gmail.com}
@@ -62,7 +67,100 @@ Please report any errors to \href{mailto:mannmalviya15@gmail.com}{mannmalviya15@
 \newpage
 
 % main content
-\section*{Lecture 1:}
-\addcontentsline{toc}{section}{Lecture 1}
+\section*{Lecture 1: Introduction}
+\addcontentsline{toc}{section}{Lecture 1: Introduction}
+
+\subsection*{Topics \& Course Overview}
+\addcontentsline{toc}{subsection}{Topics \& Course Overview}
+\begin{itemize}
+  \item Introduction to NLP
+  \item NLP Applications
+  \item Text Classifiers
+  \item Language Models
+  \item Neural Networks
+  \item Sequence Models 
+  \begin{itemize}
+    \item part-of-speech tagging
+    \item named-entity recognition
+    \item etc..
+  \end{itemize}
+  \item Syntax \& Parsing
+  \item Pretraining models
+\end{itemize}
+
+This class will \textbf{introduce NLP} broadly and talk about some of the \textbf{applications of NLP}, one of them being classifying text(Eg: a email spam classifier). 
+
+\
+
+This class will then spend a lot of time on \textbf{language modelling}(this is also a hot topic currently!). 
+
+\
+
+Then we will talk about \textbf{Neural Networks}, how they work, how to build them and how to use them for NLP tasks(for things like a language model!).
+
+\
+
+We will also talk about some different kinds of \textbf{Sequence models}, there's a lot of tasks you could view in terms of a series of things happening, typically words, a word happens and then another word happens..., you might want to ask questions about that sequence of words like, "s sequence, what do I know about it?"---disambiguation questions.
+
+
+For example is the below word in the sentence, wind as in "wind blowing" or "wind the clock".
+\begin{center}
+\begin{BVerbatim}
+"...wind..."
+\end{BVerbatim}
+\end{center}
+
+
+The two problems here are:
+\begin{enumerate}
+  \item word sense disambiguation
+  \item part-of-speech tagging  
+\end{enumerate}
+
+We treat understanding the meaning of a word in a particular context(word sense disambiguation) as a sequence labeling problem. Part of speech tagging means marking things like nouns, verbs, adjective etc. in a sentence.
+
+
+Then we will talk a bit about \textbf{syntax} and then understanding the syntax of sentences as we get them. The syntax of a language is like it's structure. The problem of recovering the syntactic structure of a sentence is called \textbf{parsing}.
+
+
+Finally we will talk about pretraining models!
+
+\subsection*{What is natural language processing?}
+\addcontentsline{toc}{subsection}{What is natural language processing?}
+
+\subsubsection{Ok what's natural language?}
+Before we answer that, lets start by asking what is not natural language.
+
+A \textbf{formal language} is something that is mathematically defined (eg. something you could do the pumping lemma on), i.e., you've got CFG rules, lambda calculus stuff, nested parentheses. If you can write down the complete grammar of the langauge and then you could answer questions based on that complete grammar, then that would be a formal language. An example of formal language is a programming language(eg: LISP) or if someone writes down a regular expression that defines a set of strings, that set of strings is a formal language. 
+
+
+
+We also have \textbf{constructed languages}(shortform: conlang) (some examples of conlang: Toki Pona, Esperanto, Volapük, ido, lojban and also Klingon\footnote{The Klingon language is the constructed language spoken by a fictional alien race called the Klingons in the Star Trek universe.}, Belter Creole\footnote{Belter Creole (lang Belta) is a constructed language (conlang) developed by linguist Nick Farmer for The Expanse television series, based on, but expanding upon, fragmented words from the books.}, Sindarin\footnote{Sindarin is a constructed Elvish language created by J.R.R. Tolkien, functioning as the primary spoken tongue of Elves and Men in Middle-earth during the Third Age.})
+
+So far we defined natural language, by what it's not. Natural language is a language that people are speaking in practice, i.e., there are(or were) native speakers of it.
+
+\subsubsection{What does it mean to process it?}
+We are going to write computer programs that deal with language. Language can come in a lot of modalities, speech, sign language, writing. Writing is the modality simplest for computers. 
+
+
+\subsubsection{Why do we want this?}
+
+??
+
+\subsection*{Human language is special!}
+\addcontentsline{toc}{subsection}{Human language is special!}
+We equate the ability to communicate in human language with \textit{intelligence} lots of animals communicate, but only humans have \textit{grammar} like we do. Very few animals can do \textit{reference, pointing, deixis\footnote{the function or use of deictic words, forms, or expressions. i.e., indicating something else, "greekified" way of talking about pointing}}. Humans have specialized hardware in their brain, as a result of evolution, for language, and learning language as a baby.
+
+
+When we talk about grammar we mean the nested structure of human language, this is completely unique to humans. By nested structure we mean things like: Clauses and parenthetical. A clause is a series of words where you have got a verb and typically a subject for that verb. You can put more clauses inside of a clause, and you can put more clauses inside those nested clauses as well.
+
+\subsection*{We say things and we mean them: semiosis}
+\addcontentsline{toc}{subsection}{We say things and we mean them: semiosis}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{semiosis.png}
+    \caption{Your caption here.}
+\end{figure}
+
 
 \end{document}
