@@ -1,18 +1,14 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{enumerate}
-\usepackage{amssymb}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
-\usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{cancel}
-\usepackage{enumitem}
+\documentclass[11pt]{article}
 
+% basic packages
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{custom}
+
+% CSE-103 specific packages
+\usepackage{cancel}
 \usepackage{lastpage}
-\usepackage{fancyhdr}
-\usepackage{geometry}
-\geometry{margin=1in}
 \usepackage{underscore}
 \usepackage{subcaption}
 \usepackage{fancyvrb}
@@ -21,40 +17,28 @@
 \usepackage{tabularx}
 \usepackage{float}
 \usepackage{makecell}
-
 \usepackage{mdframed}
-\usepackage{lipsum}
-
-\usepackage{hyperref}
 \usepackage{multicol}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{} % Clear default headers and footers
-
-% Add a simple header
-\fancyhead[L]{\textbf{CSE-103 Notes}} % Left-aligned header text
-\fancyhead[R]{\textbf{Spring 2025}}   % Right-aligned header text
-
-% Add page numbers in the footer
-\fancyfoot[C]{\thepage\ of \pageref{LastPage}} % Center-aligned footer with total pages
-
-% Disable red box around page numbers (using hyperref)
-\hypersetup{
-    colorlinks=false, % Enable colored links
-    linkcolor=blue,  % Set the color of internal links (like page numbers)
-    urlcolor=blue,   % Set the color of URLs
-    pdfborder={0 0 0} % Remove the border around links
-}
-
-% Set the listings font to a darker monospaced font (closer to Sipser's font)
-
-
 \usepackage{tikz,tcolorbox}
-\usepackage{xcolor}
-
-\usepackage{times,latexsym,mathptmx,comment,latexsym,epsf,amssymb,graphicx,url,enumerate}
+\usepackage{times,latexsym,mathptmx,comment,epsf,url}
 \usetikzlibrary{arrows,positioning,automata}
 \usetikzlibrary{arrows.meta}
+
+% override hyperref settings from custom.sty
+\hypersetup{
+    colorlinks=false,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdfborder={0 0 0}
+}
+
+% page formatting
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{CSE-103 Notes}}
+\fancyhead[R]{\textbf{Spring 2025}}
+\fancyfoot[C]{\thepage\ of \pageref{LastPage}}
 
 \tikzset{
   node distance=1cm, % Minimum distance between two nodes. Change this if you need to.
@@ -79,13 +63,36 @@
   }
 }
 
-\title{CSE-103: Computational Models\\ Lecture Notes}
-\author{Mann Malviya}
-\date{Spring 2025}
-
 \begin{document}
-\maketitle
-\tableofcontents
+
+% make title page
+\thispagestyle{empty}
+\bigskip \
+\vspace{0.1cm}
+
+\begin{center}
+{\fontsize{22}{22} \selectfont Notes on}
+\vskip 16pt
+{\fontsize{20}{20} \selectfont \bf \sffamily CSE-103: Computational Models}
+\vskip 24pt
+{\fontsize{18}{18} \selectfont \rmfamily Mann Malviya}
+\vskip 6pt
+{\fontsize{14}{14} \selectfont \ttfamily {\hypersetup{urlcolor=black}\href{mailto:mannmalviya15@gmail.com}{mannmalviya15@gmail.com}}}
+\vskip 24pt
+\end{center}
+
+{\parindent0pt \baselineskip=15.5pt These notes cover the theory of computational models. The primary sources used to write these notes were:
+
+\begin{itemize}
+    \item CSE 103: Computational Models — UCSC, Spring 2025 taught by Assistant Prof.\ Daniel Fremont
+    \item Textbook: \textit{Introduction to the Theory of Computation} by Michael Sipser
+\end{itemize}
+
+}
+
+% make table of contents
+\newpage
+\microtoc
 \newpage
 
 \section*{Introduction}

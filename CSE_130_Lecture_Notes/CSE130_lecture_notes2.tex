@@ -6,6 +6,7 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{custom}
 \usepackage{cancel}
 
 \usepackage{lastpage}
@@ -52,13 +53,37 @@
 
 
 
-\title{CSE-130: Principles of Computer Systems Design\\ Lecture Notes}
-\author{Mann Malviya }
-\date{Winter 2025}
-
 \begin{document}
 
-\maketitle
+% make title page
+\thispagestyle{empty}
+\bigskip \
+\vspace{0.1cm}
+
+\begin{center}
+{\fontsize{22}{22} \selectfont Notes on}
+\vskip 16pt
+{\fontsize{20}{20} \selectfont \bf \sffamily CSE-130: Principles of Computer Systems Design}
+\vskip 24pt
+{\fontsize{18}{18} \selectfont \rmfamily Mann Malviya}
+\vskip 6pt
+{\fontsize{14}{14} \selectfont \ttfamily {\hypersetup{urlcolor=black}\href{mailto:mannmalviya15@gmail.com}{mannmalviya15@gmail.com}}}
+\vskip 24pt
+\end{center}
+
+{\parindent0pt \baselineskip=15.5pt These notes cover the principles of computer systems design. The primary sources used to write these notes were:
+
+\begin{itemize}
+    \item CSE 130: Principles of Computer Systems Design — UCSC, Winter 2025 taught by Prof.\ Kerry Veenstra
+    \item Textbook: \textit{Principles of Computer System Design Part I} by Jerome Saltzer and Franz Kaashoek
+\end{itemize}
+
+Please report any errors to \href{mailto:mannmalviya15@gmail.com}{mannmalviya15@gmail.com}
+
+}
+
+% make table of contents
+\newpage
 \tableofcontents
 \newpage
 
