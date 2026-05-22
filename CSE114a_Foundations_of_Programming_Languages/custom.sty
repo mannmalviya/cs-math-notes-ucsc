@@ -286,3 +286,70 @@
 \newtheorem*{prop}{Prop}
 \newtheorem*{proofsketch}{Proof Sketch}
 \renewenvironment{proof}{\noindent {\bfseries Proof.}\,}{\medskip}
+
+% ------------------------------------------------------------------
+% Source-code listings: Haskell + Elsa (CSE 114A)
+% ------------------------------------------------------------------
+\usepackage{listings}
+% Optional crisper mono (changes ALL \ttfamily): \usepackage{inconsolata}
+
+\definecolor{codekw}{HTML}{0033B3}    % keywords
+\definecolor{codecom}{HTML}{8C8C8C}   % comments
+\definecolor{codestr}{HTML}{067D17}   % strings
+\definecolor{codearrow}{HTML}{B5179E} % elsa reduction arrows
+\definecolor{coderule}{HTML}{C8C8C8}  % frame rule
+
+% shared base style (single-rule frame, no background fill)
+\lstdefinestyle{notes}{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{codekw}\bfseries,
+  commentstyle=\color{codecom}\itshape,
+  stringstyle=\color{codestr},
+  frame=single,
+  rulecolor=\color{coderule},
+  framesep=6pt,
+  xleftmargin=8pt,
+  xrightmargin=8pt,
+  aboveskip=1em,
+  belowskip=1em,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2,
+  columns=fullflexible,
+  keepspaces=true,
+  upquote=true,
+}
+
+% Haskell uses listings' built-in language
+\lstdefinestyle{haskell}{
+  style=notes,
+  language=Haskell,
+  morekeywords={where,data,type,newtype,class,instance,deriving,
+                case,of,let,in,do,module,import,if,then,else},
+}
+
+% Elsa: custom language. Reduction arrows kept as literal ASCII but coloured.
+\lstdefinelanguage{Elsa}{
+  morekeywords={let,eval},
+  morecomment=[l]{--},
+  sensitive=true,
+  literate=
+    {=a>}{{\color{codearrow}=a>}}3
+    {=b>}{{\color{codearrow}=b>}}3
+    {=d>}{{\color{codearrow}=d>}}3
+    {=*>}{{\color{codearrow}=*>}}3
+    {=~>}{{\color{codearrow}=~>}}3
+}
+\lstdefinestyle{elsa}{style=notes, language=Elsa}
+
+% Block environments
+\lstnewenvironment{haskellcode}{\lstset{style=haskell}}{}
+\lstnewenvironment{elsacode}{\lstset{style=elsa}}{}
+
+% Whole-file include
+\newcommand{\hsfile}[1]{\lstinputlisting[style=haskell]{#1}}
+\newcommand{\elsafile}[1]{\lstinputlisting[style=elsa]{#1}}
+
+% Inline code (verbatim delimiters): \hsi|map f xs|  /  \elsai|\x -> x|
+\newcommand{\hsi}{\lstinline[style=haskell]}
+\newcommand{\elsai}{\lstinline[style=elsa]}

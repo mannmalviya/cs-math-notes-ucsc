@@ -76,8 +76,70 @@ PL is one of the most misunderstood areas of computer science, it's even misunde
 \begin{itemize}
   \item PL people consider the \textbf{programming language} to have a central place in solving computing problems. 
   
-  This might sound kind of obvious, "like of course we use programming languages to solve computing problems, what else would we do?" But this is actually an unusual and niche point of view, among computer scientists.
+  \item This might sound kind of obvious, "like of course we use programming languages to solve computing problems, what else would we do?" But this is actually an unusual and niche point of view, among computer scientists. A lot of computer scientists don't actually think the programming language that they might use to solve a given problem is all that important. They are concerned with the problem that they want to solve, but the question of what language they might use to implement a solution to that problem not so much, and if they think about it at all they think it's an implementation detail and not very interesting or important to the problem itself.
+  They might figure that most languages are more or less the same any way, they are all Turing complete and close enough, so who cares?!
+  
+  \item The PL point of view is different and says that the programming language itself has a central place in the problem solving process, i.e., the choice of language matters and the choice of abstractions that a language offers also matters.
+
+  \item So if you take the PL point of view, the way that your approach to solving a computing problem might as well be by first designing a programming language to solve that problem and then using that language you designed, to implement a solution!
+
+  \item So to think about things as being a programming language design and implementation problem first, that's a PL way of approaching problem solving.
+  
+  \item This is not how every computer scientist goes about solving problems, this is a niche way of going about things --- Turn everything into a language design and language implementation problem first \& then go from there. At the extreme this might mean designing a new language to solve every new problem that you have!
+
+  \item PL people consider software behavior in a \underline{rigorous} and \underline{general} way.
+  \begin{itemize}
+    \item By rigorous we mean that computer programs are actually mathematical objects that we can reason about formally using the tools of math, in fact programs are actually things you can write mathematical proofs about! 
+    \item By general, we mean, if you are a PL person, you are often not concerned by just one particular program, you are going to be concerned by a whole class of programs, maybe all of the programs that are expressible in some particular programming language.
+    \item PL people often make claims about \textbf{all} the programs that can be written using some particular programming language (later in the course we will make claims about \textbf{haskell} programs broadly)
+    \item It's very powerful to be able to say something about all of the programs that are expressible within a particular programming language, or all of the programs that use or don't use a particular language Feature.
+    \item Example: Rust is a memory safe language, which means that there's a whole class of memory related errors that cannot happen, they are completely ruled out when you are writing Rust (As long as you are not using the unsafe fragment of the language and barring language implementation issues).
+  \end{itemize}
 \end{itemize}
 
+\begin{center}
+	\rule{450pt}{1pt} 
+\end{center}
+\newpage
+
+\section*{Lecture 2:}
+\addcontentsline{toc}{section}{Lecture 2}
+
+\begin{center}
+	\rule{450pt}{1pt} 
+\end{center}
+\newpage
+
+\section*{Lecture 21:}
+\addcontentsline{toc}{section}{Lecture 21}
+
+We have spent a lot of time writing a lot of interpreters. Why do interpreters matter so much? No matter what code you're running, there's always an interpreter, at some level the CPU is an interpreter, it turns syntax of assembly language programs into semantics.
+
+That's what an interpreter is, it turns syntax into semantics!
+
+But interpreters are not the only thing that we are studying, in general we are studying programs that operate on programs.
+
+\
+
+\noindent\textbf{Agenda:}
+\begin{itemize}
+    \item Intro to type checking and type inference
+    \item A type system for "mini-nano"
+    \item A tiny, terrible type inferencer (if time)
+\end{itemize}
+
+
+\noindent So we've built interpreters that take ASTs and produce values, and last time we extended our interpreter to function definitions \& function calls. The language we are creating is starting to feel pretty real! But what happens if we create an AST that does something like applying a number to a number? 
+
+Looking at a snippet of the code from last time:
+
+\begin{haskellcode}
+data Expr = Number Int
+
+...
+eval::Expr -> Env -> Value
+
+
+\end{haskellcode}
 
 \end{document}
